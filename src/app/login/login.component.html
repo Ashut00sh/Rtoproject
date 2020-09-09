@@ -1,0 +1,67 @@
+<div class="container-fluid">
+  <div class="row" style="height: 100vh">
+    <!--left block-->
+    <div
+      class="col bg-warning d-flex flex-col justify-content-center align-items-center"
+      style="font-size: large"
+    >
+      <div class="h2">welcome To vehicle registraion page</div>
+    </div>
+
+    <!--right blocck-->
+
+    <div
+      class="col bg-info flex-col d-flex justify-content-center align-items-center text-light"
+    >
+      <div class="row" [formGroup]="myfb">
+        <div class="col">
+          <div class="h2">SIGNIN</div>
+          <!--email div-->
+          <div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">User Name</label>
+              <input
+                type="text"
+                placeholder="Enter Username"
+                class="form-control"
+                formControlName="username"
+              />
+            </div>
+          </div>
+          <!--password div-->
+          <div>
+            <div class="form-group">
+              <label>Password</label>
+              <input
+                type="password"
+                placeholder="Enter Password"
+                class="form-control"
+                formControlName="password"
+              />
+            </div>
+            <!--new pass-->
+          </div>
+          <!--alert message-->
+          <div>
+            <div class="alert alert-danger" role="alert" *ngIf="invaliddata">
+              Invalid UserName Or Password
+            </div>
+          </div>
+          <!--login btn div-->
+          <div>
+            <button
+              type="submit"
+              class="btn btn-primary btn-md m-4"
+              [disabled]="!myfb.valid"
+              (click)="afterlogin()"
+            >
+              LOGIN
+            </button>
+            <a routerLink="/register" class="text-light">Register Here</a>
+          </div>
+        </div>
+      </div>
+      <div>{{ myfb.value | json }}/{{ myfb.valid }}</div>
+    </div>
+  </div>
+</div>

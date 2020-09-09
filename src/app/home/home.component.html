@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <div class="row bg-info" style="height: 65px">
+    <div class="col d-flex align-items-center">HOME</div>
+    <div class="col d-flex justify-content-end align-items-center">
+      <a class="btn btn-secondary m-1" routerLink="/Home/Vehicleinfo"
+        >VehicleInfo</a
+      >
+      <a class="btn btn-secondary m-1" routerLink="/Home/contactus"
+        >contactus</a
+      >
+
+      <button type="button" class="btn btn-secondary m-1" (click)="logout()">
+        Log Out
+      </button>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

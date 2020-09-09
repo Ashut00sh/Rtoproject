@@ -1,0 +1,91 @@
+<div class="container-fluid">
+  <div class="row" style="height: 100vh">
+    <!--left block-->
+    <div
+      class="col bg-warning d-flex flex-col justify-content-center align-items-center"
+      style="font-size: large"
+    >
+      <div class="h2">welcome To vehicle registraion page</div>
+    </div>
+
+    <!--right blocck-->
+
+    <div
+      class="col bg-info flex-col d-flex justify-content-center align-items-center text-light"
+    >
+      <div class="row" [formGroup]="myfb">
+        <div class="col">
+          <div class="h2">PEGISTRATION FORM</div>
+          <!--email div-->
+          <div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">User Name</label>
+              <input
+                type="text"
+                placeholder="Enter Username"
+                class="form-control"
+                formControlName="username"
+              />
+            </div>
+          </div>
+          <!--password div-->
+          <div>
+            <div class="form-group">
+              <label>Password</label>
+              <input
+                type="password"
+                placeholder="Enter Password"
+                class="form-control"
+                formControlName="password"
+              />
+            </div>
+            <!--confirm password-->
+
+            <!--email div-->
+            <div>
+              <div class="form-group">
+                <label>Email</label>
+                <input
+                  type="email"
+                  placeholder="Enter Email"
+                  class="form-control"
+                  formControlName="email"
+                />
+              </div>
+            </div>
+            <!--phone no-->
+            <div>
+              <div class="form-group">
+                <label>Phone Num</label>
+                <input
+                  type="phone"
+                  placeholder="Enter Phone Number"
+                  class="form-control"
+                  formControlName="phone"
+                />
+              </div>
+              <!--alert message-->
+              <div>
+                <div class="alert alert-danger" role="alert" *ngIf="">
+                  Invalid Credentials
+                </div>
+              </div>
+              <!--register btn div-->
+              <div>
+                <button
+                  type="submit"
+                  class="btn btn-primary btn-md m-4"
+                  (click)="register()"
+                  [disabled]="!myfb.valid"
+                >
+                  REGITER
+                </button>
+                <a routerLink="/login" class="text-light">Login Here</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
