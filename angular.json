@@ -144,6 +144,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "orangeapp"
+    }
+  },
+  "defaultProject": "orangeapp",
+  "cli": {
+    "analytics": "241d32dc-3582-48b4-904c-a651509d0051"
+  }
 }
